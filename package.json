@@ -1,0 +1,24 @@
+{
+  "name": "titanium-icon-input-container",
+  "version": "1.0.0",
+  "description": "",
+  "main": "titanium-icon-input-container.html",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LssPolymerElements/titanium-icon-input-container.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LssPolymerElements/titanium-icon-input-container.git/issues"
+  },
+  "homepage": "https://github.com/LssPolymerElements/titanium-icon-input-container.git#readme"
+}

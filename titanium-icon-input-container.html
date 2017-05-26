@@ -1,0 +1,59 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer-ts/polymer-ts.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<!--
+
+`titanium-icon-input-container` wraps an input and adds icon to the left of it. It istens for 
+changes to the slotted inputs focused attribute updated the icon color accordingly.  If invalid
+is bound through, the color of the icon will change to error color when invalid.  
+
+Example:
+
+   <icon-input-container invalid="[[nameInvalid]]" icon="my-icons:lightning">
+        <paper-input   invalid="{{nameInvalid}}" required></paper-input>
+    </icon-input-container>
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--titanium-icon-input-container-invalid-color` | The color of icon when invalid | `--error-color`
+`--titanium-icon-input-container-focused-color` | The color of icon when focused | `--primary-color`
+`--titanium-icon-input-container-icon` | Mixin applied to the icon | `{}`
+
+@group Titanium Elements
+@element titanium-icon-input-container
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="titanium-icon-input-container">
+    <template>
+        <style>
+             :host {
+                @apply --layout-horizontal;
+                @apply --layout-flex-auto;
+                min-width: 200px;
+                padding: 8px;
+            }
+
+            iron-icon {
+                color: #737373;
+                @apply --layout-self-end;
+                margin-bottom: 8px;
+                margin-right: 4px;
+                @apply --titanium-icon-input-container-icon
+            }
+
+            iron-icon[focused] {
+                color: var(--titanium-icon-input-container-focused-color, var(--primary-color));
+            }
+
+            iron-icon[invalid] {
+                color: var(--titanium-icon-input-container-invalid-color, var(--error-color));
+            }
+        </style>
+        <iron-icon focused$="[[focused]]" invalid$="[[invalid]]" icon="[[icon]]"></iron-icon>
+        <slot></slot>
+    </template>
+    <script src="titanium-icon-input-container.js"></script>
+</dom-module>

@@ -1,0 +1,4 @@
+bower_components/
+node_modules/
+*.map
+.vscode/symbols.json

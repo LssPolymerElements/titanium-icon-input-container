@@ -1,0 +1,34 @@
+{
+  "name": "titanium-icon-input-container",
+  "version": "1.0.0",
+  "keywords": [
+    "polymer",
+    "leavitt software",
+    "icon input"
+  ],
+  "authors": [
+    "Leavitt Software Solutions"
+  ],
+  "main": "titanium-icon-input-container.html",
+  "description": "`titanium-icon-input-container` wraps an input and adds icon to the left of it. It reacts to focused and invlaid events as well.",
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "package.json",
+    "tsconfig.json",
+    ".gitignore",
+    ".vscode"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "polymer-ts": "^0.1.26",
+    "iron-icon": "PolymerElements/iron-icon#^2.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "iron-icons": "PolymerElements/iron-icons#^2.0.0",
+    "paper-input": "PolymerElements/paper-input#^2.0.0"
+  }
+}
