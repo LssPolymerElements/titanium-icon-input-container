@@ -4,7 +4,7 @@
             "name": "Launch Chrome against localhost, with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:3000/components/titanium-icon-input-container.git/demo/",
+            "url": "http://localhost:3000/components/titanium-icon-input-container/demo/",
             "sourceMaps": true,
             "webRoot": "${workspaceRoot}"
         },

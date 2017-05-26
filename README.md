@@ -1,6 +1,6 @@
-# titanium-icon-input-container.git
+# titanium-icon-input-container
 
-To install use: `bower install --save titanium-icon-input-container.git`
+To install use: `bower install --save titanium-icon-input-container`
 
 [ LIVE DEMO AND API ](https://www.webcomponents.org/element/LssPolymerElements/titanium-icon-input-container)
 
