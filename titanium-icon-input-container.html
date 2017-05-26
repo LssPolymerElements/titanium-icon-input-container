@@ -32,7 +32,7 @@ Custom property | Description | Default
              :host {
                 @apply --layout-horizontal;
                 @apply --layout-flex-auto;
-                min-width: 200px;
+                min-width: 100px;
                 padding: 8px;
             }
 
@@ -50,6 +50,10 @@ Custom property | Description | Default
 
             iron-icon[invalid] {
                 color: var(--titanium-icon-input-container-invalid-color, var(--error-color));
+            }
+
+             :host ::slotted(*) {
+                @apply --layout-flex-auto;
             }
         </style>
         <iron-icon focused$="[[focused]]" invalid$="[[invalid]]" icon="[[icon]]"></iron-icon>
