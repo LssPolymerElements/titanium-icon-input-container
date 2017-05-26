@@ -9,21 +9,23 @@ To install use: `bower install --save titanium-icon-input-container`
 <!---
 ```
 <custom-element-demo>
-  <template>
+  <template is="dom-bind">
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../paper-input/paper-input.html">
+    <link rel="import" href="../iron-icons/iron-icons.html">
+    
     <link rel="import" href="titanium-icon-input-container.html">
-    <div>
-      <template is="dom-bind">
-        <next-code-block></next-code-block>
-      </template>
-    </div>
+    <style is="custom-style">
+      
+    </style>
+    <titanium-icon-input-container invalid="{{invalid}}" icon="alarm">
+        <paper-input invalid="[[invalid]]"></paper-input>
+    </titanium-icon-input-container>
+    <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-<titanium-icon-input-container invalid="{{invalid}}" icon="alarm">
-    <paper-input invalid="[[invalid]]"></paper-input>
-</titanium-icon-input-container>
-```
 
+```
