@@ -36,12 +36,20 @@ Custom property | Description | Default
                 padding: 8px;
             }
 
+             :host ::slotted(*) {
+                @apply --layout-flex-auto;
+            }
+
             iron-icon {
                 color: #737373;
                 @apply --layout-self-end;
                 margin-bottom: 8px;
                 margin-right: 4px;
-                @apply --titanium-icon-input-container-icon
+                @apply --titanium-icon-input-container-icon;
+
+                /* Important -- Overwrite flex auto in polyfilled browsers 
+                because ::slotted(*) spills into iron-icon*/
+                @apply --layout-flex-none;
             }
 
             iron-icon[focused] {
@@ -52,12 +60,12 @@ Custom property | Description | Default
                 color: var(--titanium-icon-input-container-invalid-color, var(--error-color));
             }
 
-             :host ::slotted(*) {
-                @apply --layout-flex-auto;
+            iron-icon[disabled] {
+                color: var(--titanium-icon-input-container-disabled-color, #B6B6B6);
             }
         </style>
-        <iron-icon focused$="[[focused]]" invalid$="[[invalid]]" icon="[[icon]]"></iron-icon>
-        <slot></slot>
+        <iron-icon focused$="[[focused]]" disabled$="[[disabled]]" invalid$="[[invalid]]" icon="[[icon]]"></iron-icon>
+        <slot class="input"></slot>
     </template>
     <script src="titanium-icon-input-container.js"></script>
 </dom-module>

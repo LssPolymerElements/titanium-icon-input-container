@@ -26,6 +26,9 @@ var TitaniumIconInputContainer = (function (_super) {
                 if (m.attributeName == self.attrForFocused) {
                     self.set("focused", m.oldValue === null ? true : false);
                 }
+                if (m.attributeName == self.attrForDisabled) {
+                    self.set("disabled", m.oldValue === null ? true : false);
+                }
             });
         });
         // Observe attribute changes to child elements
@@ -51,6 +54,12 @@ __decorate([
         type: Boolean,
         value: false
     })
+], TitaniumIconInputContainer.prototype, "disabled", void 0);
+__decorate([
+    property({
+        type: Boolean,
+        value: false
+    })
 ], TitaniumIconInputContainer.prototype, "invalid", void 0);
 __decorate([
     property({
@@ -58,6 +67,12 @@ __decorate([
         value: "focused"
     })
 ], TitaniumIconInputContainer.prototype, "attrForFocused", void 0);
+__decorate([
+    property({
+        type: String,
+        value: "disabled"
+    })
+], TitaniumIconInputContainer.prototype, "attrForDisabled", void 0);
 TitaniumIconInputContainer = __decorate([
     component("titanium-icon-input-container")
 ], TitaniumIconInputContainer);
