@@ -34,29 +34,34 @@ class TitaniumIconInputContainer extends polymer.Base {
     })
     attrForDisabled: string;
 
-    attached() {
+    @property({
+        type: String,
+        value: "invalid"
+    })
+    attrForInvalid: string;
+
+    ready() {
         var self = this;
-        this.$.slot.getDistributedNodes().forEach(o => {
+
+        this.getContentChildren('#slot').forEach(o => {
+            o.addEventListener(`${self.attrForFocused}-changed`, e => {
+                if (e.detail)
+                    this.focused = e.detail.value;
+            });
+            o.addEventListener(`${self.attrForInvalid}-changed`, e => {
+                if (e.detail)
+                    this.invalid = e.detail.value;
+            });
+            o.addEventListener(`${self.attrForDisabled}-changed`, e => {
+                if (e.detail)
+                    this.disabled = e.detail.value;
+            });
+
             if (o[this.attrForDisabled]) {
                 self.disabled = true;
             }
         })
-        var observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (m) {
-                if (m.attributeName == self.attrForFocused) {
-                    self.set("focused", m.oldValue === null ? true : false);
-                }
-                if (m.attributeName == self.attrForDisabled) {
-                    self.set("disabled", m.oldValue === null ? true : false);
-                }
-            });
-        });
-        // Observe attribute changes to child elements
-        observer.observe(this, {
-            attributes: true,
-            subtree: true,
-            attributeOldValue: true
-        });
+
     }
 
 

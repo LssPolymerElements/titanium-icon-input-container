@@ -2,6 +2,7 @@
 <link rel="import" href="../../paper-input/paper-input.html">
 <link rel="import" href="../../iron-icons/iron-icons.html">
 <link rel="import" href="../../iron-icon/iron-icon.html">
+<link rel="import" href="../../paper-button/paper-button.html">
 <link rel="import" href="../titanium-icon-input-container.html">
 
 <dom-module id="titanium-icon-input-container-demo">
@@ -14,13 +15,16 @@
 
         <h2>Disabled Element Demo</h2>
         <titanium-icon-input-container icon="icons:alarm">
-            <paper-input disabled label="Disabled Input Demo"></paper-input>
+            <paper-input disabled="{{disabled}}" label="Disabled Input Demo"></paper-input>
+        </titanium-icon-input-container>
+        <paper-button id="enableButton" raised>Toggle Inputs Enable</paper-button>
+
+        <h2>Invalid State Sample</h2>
+        <titanium-icon-input-container icon="icons:add-alert">
+            <paper-input invalid="{{invalid}}" error-message="This is a samlpe error"></paper-input>
         </titanium-icon-input-container>
 
-        <h2>Error State Sample (you must bind the invalid property through from your input)</h2>
-        <titanium-icon-input-container invalid="{{invalid}}" icon="icons:add-alert">
-            <paper-input error-message="This is a samlpe error" invalid="[[invalid]]"></paper-input>
-        </titanium-icon-input-container>
+        <paper-button id="validityButton" raised>Toggle Inputs Validity</paper-button>
     </template>
     <script>
         Polymer({
@@ -28,8 +32,30 @@
             properties: {
                 invalid: {
                     type: Boolean,
-                    value: true
+                    value: false
                 }
+            },
+            properties: {
+                disabled: {
+                    type: Boolean,
+                    value: false
+                }
+            },
+            listeners: {
+                'validityButton.tap': 'invalidateToggle',
+                'enableButton.tap': 'enableToggle'
+            },
+            invalidateToggle: function () {
+                if (this.invalid === true)
+                    this.invalid = false;
+                else
+                    this.invalid = true;
+            },
+            enableToggle: function () {
+                if (this.disabled === true)
+                    this.disabled = false;
+                else
+                    this.disabled = true;
             }
         });
     </script>
