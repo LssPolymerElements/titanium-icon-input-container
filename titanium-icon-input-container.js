@@ -19,29 +19,25 @@ var TitaniumIconInputContainer = (function (_super) {
     function TitaniumIconInputContainer() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    TitaniumIconInputContainer.prototype.attached = function () {
+    TitaniumIconInputContainer.prototype.ready = function () {
         var _this = this;
         var self = this;
-        this.$.slot.getDistributedNodes().forEach(function (o) {
+        this.getContentChildren('#slot').forEach(function (o) {
+            o.addEventListener(self.attrForFocused + "-changed", function (e) {
+                if (e.detail)
+                    _this.focused = e.detail.value;
+            });
+            o.addEventListener(self.attrForInvalid + "-changed", function (e) {
+                if (e.detail)
+                    _this.invalid = e.detail.value;
+            });
+            o.addEventListener(self.attrForDisabled + "-changed", function (e) {
+                if (e.detail)
+                    _this.disabled = e.detail.value;
+            });
             if (o[_this.attrForDisabled]) {
                 self.disabled = true;
             }
-        });
-        var observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (m) {
-                if (m.attributeName == self.attrForFocused) {
-                    self.set("focused", m.oldValue === null ? true : false);
-                }
-                if (m.attributeName == self.attrForDisabled) {
-                    self.set("disabled", m.oldValue === null ? true : false);
-                }
-            });
-        });
-        // Observe attribute changes to child elements
-        observer.observe(this, {
-            attributes: true,
-            subtree: true,
-            attributeOldValue: true
         });
     };
     return TitaniumIconInputContainer;
@@ -79,6 +75,12 @@ __decorate([
         value: "disabled"
     })
 ], TitaniumIconInputContainer.prototype, "attrForDisabled", void 0);
+__decorate([
+    property({
+        type: String,
+        value: "invalid"
+    })
+], TitaniumIconInputContainer.prototype, "attrForInvalid", void 0);
 TitaniumIconInputContainer = __decorate([
     component("titanium-icon-input-container")
 ], TitaniumIconInputContainer);

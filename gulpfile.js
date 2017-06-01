@@ -14,7 +14,7 @@ gulp.task('compile', function (done) {
 });
 
 gulp.task('polymerServe', function (done) {
-  exec('polymer serve -p 8000 -v', function (err, stdOut, stdErr) {
+  exec('polymer serve -p 8001 -v', function (err, stdOut, stdErr) {
     console.log(stdOut);
     if (err) {
       done(err);
@@ -26,7 +26,7 @@ gulp.task('polymerServe', function (done) {
 
 gulp.task('browser-sync', function () {
   browserSync.init({
-    proxy: "localhost:8000"
+    proxy: "localhost:8001"
   });
 });
 
