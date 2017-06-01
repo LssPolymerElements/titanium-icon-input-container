@@ -36,6 +36,11 @@ class TitaniumIconInputContainer extends polymer.Base {
 
     attached() {
         var self = this;
+        this.$.slot.getDistributedNodes().forEach(o => {
+            if (o[this.attrForDisabled]) {
+                self.disabled = true;
+            }
+        })
         var observer = new MutationObserver(function (mutations) {
             mutations.forEach(function (m) {
                 if (m.attributeName == self.attrForFocused) {

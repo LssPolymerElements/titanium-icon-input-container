@@ -20,7 +20,13 @@ var TitaniumIconInputContainer = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TitaniumIconInputContainer.prototype.attached = function () {
+        var _this = this;
         var self = this;
+        this.$.slot.getDistributedNodes().forEach(function (o) {
+            if (o[_this.attrForDisabled]) {
+                self.disabled = true;
+            }
+        });
         var observer = new MutationObserver(function (mutations) {
             mutations.forEach(function (m) {
                 if (m.attributeName == self.attrForFocused) {
