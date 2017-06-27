@@ -1,8 +1,8 @@
 {
   "name": "titanium-icon-input-container",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "keywords": [
-    "polymer",
+    "polymer 2",
     "leavitt software",
     "icon input"
   ],
@@ -10,7 +10,7 @@
     "Leavitt Software Solutions"
   ],
   "main": "titanium-icon-input-container.html",
-  "description": "`titanium-icon-input-container` wraps an input and adds icon to the left of it. It reacts to focused and invlaid events as well.",
+  "description": "`titanium-icon-input-container` wraps an input and adds icon to the left of it. It reacts to focused and invlaid events as well. Polymer 2",
   "license": "MIT",
   "ignore": [
     "node_modules",
@@ -21,15 +21,16 @@
     ".vscode"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0",
-    "polymer-ts": "^0.1.26",
+    "polymer": "Polymer/polymer#^2.0.0",
+    "polymer2-ts": "^1.0.0",
     "iron-icon": "PolymerElements/iron-icon#^2.0.0"
   },
   "devDependencies": {
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-    "iron-icons": "PolymerElements/iron-icons#^2.0.0",
+    "lss-iron-demo-helpers": "LssPolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
     "paper-input": "PolymerElements/paper-input#^2.0.0",
-    "paper-button": "PolymerElements/paper-button#^2.0.0"
+    "paper-button": "PolymerElements/paper-button#^2.0.0",
+    "iron-icons": "PolymerElements/iron-icons#^2.0.0"
   }
 }

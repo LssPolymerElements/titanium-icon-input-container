@@ -1,58 +1,46 @@
-@component("titanium-icon-input-container")
-class TitaniumIconInputContainer extends polymer.Base {
+@customElement("titanium-icon-input-container")
+class TitaniumIconInputContainer extends Polymer.Element {
 
-    @property({ type: String, })
+    @property()
     icon: string;
 
-    @property({
-        type: Boolean,
-        value: false
-    })
-    focused: boolean;
+    @property()
+    focused: boolean = false;
 
-    @property({
-        type: Boolean,
-        value: false
-    })
-    disabled: boolean;
+    @property()
+    disabled: boolean = false;
 
-    @property({
-        type: Boolean,
-        value: false
-    })
-    invalid: boolean;
+    @property()
+    invalid: boolean = false;
 
-    @property({
-        type: String,
-        value: "focused"
-    })
-    attrForFocused: string;
+    @property()
+    attrForFocused: string = "focused"
 
-    @property({
-        type: String,
-        value: "disabled"
-    })
-    attrForDisabled: string;
+    @property()
+    attrForDisabled: string = "disabled";
 
-    @property({
-        type: String,
-        value: "invalid"
-    })
-    attrForInvalid: string;
+    @property()
+    attrForInvalid: string = "invalid";
 
     ready() {
+        super.ready();
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        var elements = Polymer.dom(this.$.slot).getDistributedNodes();
         var self = this;
 
-        this.getContentChildren('#slot').forEach(o => {
-            o.addEventListener(`${self.attrForFocused}-changed`, e => {
+        elements.forEach((o: any) => {
+            o.addEventListener(`${self.attrForFocused}-changed`, (e: any) => {
                 if (e.detail)
                     this.focused = e.detail.value;
             });
-            o.addEventListener(`${self.attrForInvalid}-changed`, e => {
+            o.addEventListener(`${self.attrForInvalid}-changed`, (e: any) => {
                 if (e.detail)
                     this.invalid = e.detail.value;
             });
-            o.addEventListener(`${self.attrForDisabled}-changed`, e => {
+            o.addEventListener(`${self.attrForDisabled}-changed`, (e: any) => {
                 if (e.detail)
                     this.disabled = e.detail.value;
             });
@@ -61,9 +49,6 @@ class TitaniumIconInputContainer extends polymer.Base {
                 self.disabled = true;
             }
         })
-
     }
 
-
 }
-TitaniumIconInputContainer.register();
