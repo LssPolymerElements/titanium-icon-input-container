@@ -1,6 +1,6 @@
 # titanium-icon-input-container
 
-To install use: `bower install --save titanium-icon-input-container`
+`bower install --save titanium-icon-input-container`
 
 A simple way to add an prefixed icon to an input that responds to disabled, focused and invalid states. 
 
