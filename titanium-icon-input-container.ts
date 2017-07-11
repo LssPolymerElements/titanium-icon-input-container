@@ -1,4 +1,4 @@
-@customElement("titanium-icon-input-container")
+@customElement('titanium-icon-input-container')
 class TitaniumIconInputContainer extends Polymer.Element {
 
     @property()
@@ -14,13 +14,13 @@ class TitaniumIconInputContainer extends Polymer.Element {
     invalid: boolean = false;
 
     @property()
-    attrForFocused: string = "focused"
+    attrForFocused: string = 'focused';
 
     @property()
-    attrForDisabled: string = "disabled";
+    attrForDisabled: string = 'disabled';
 
     @property()
-    attrForInvalid: string = "invalid";
+    attrForInvalid: string = 'invalid';
 
     ready() {
         super.ready();
@@ -28,8 +28,8 @@ class TitaniumIconInputContainer extends Polymer.Element {
 
     connectedCallback() {
         super.connectedCallback();
-        var elements = Polymer.dom(this.$.slot).getDistributedNodes();
-        var self = this;
+        let elements: any = Polymer.dom(this.$.slot).getDistributedNodes();
+        let self = this;
 
         elements.forEach((o: any) => {
             o.addEventListener(`${self.attrForFocused}-changed`, (e: any) => {
@@ -48,7 +48,7 @@ class TitaniumIconInputContainer extends Polymer.Element {
             if (o[this.attrForDisabled]) {
                 self.disabled = true;
             }
-        })
+        });
     }
 
 }

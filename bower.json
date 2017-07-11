@@ -1,6 +1,6 @@
 {
   "name": "titanium-icon-input-container",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "keywords": [
     "polymer 2",
     "leavitt software",
@@ -32,5 +32,8 @@
     "paper-input": "PolymerElements/paper-input#^2.0.0",
     "paper-button": "PolymerElements/paper-button#^2.0.0",
     "iron-icons": "PolymerElements/iron-icons#^2.0.0"
+  },
+  "demos": {
+    "Demo": "demo/index.html"
   }
 }

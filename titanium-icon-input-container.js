@@ -13,17 +13,17 @@ let TitaniumIconInputContainer = class TitaniumIconInputContainer extends Polyme
         this.focused = false;
         this.disabled = false;
         this.invalid = false;
-        this.attrForFocused = "focused";
-        this.attrForDisabled = "disabled";
-        this.attrForInvalid = "invalid";
+        this.attrForFocused = 'focused';
+        this.attrForDisabled = 'disabled';
+        this.attrForInvalid = 'invalid';
     }
     ready() {
         super.ready();
     }
     connectedCallback() {
         super.connectedCallback();
-        var elements = Polymer.dom(this.$.slot).getDistributedNodes();
-        var self = this;
+        let elements = Polymer.dom(this.$.slot).getDistributedNodes();
+        let self = this;
         elements.forEach((o) => {
             o.addEventListener(`${self.attrForFocused}-changed`, (e) => {
                 if (e.detail)
@@ -72,5 +72,5 @@ __decorate([
     __metadata("design:type", String)
 ], TitaniumIconInputContainer.prototype, "attrForInvalid", void 0);
 TitaniumIconInputContainer = __decorate([
-    customElement("titanium-icon-input-container")
+    customElement('titanium-icon-input-container')
 ], TitaniumIconInputContainer);

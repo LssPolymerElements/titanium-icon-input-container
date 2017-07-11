@@ -26,7 +26,8 @@ gulp.task('polymerServe', function (done) {
 
 gulp.task('browser-sync', function () {
   browserSync.init({
-    proxy: "localhost:8001"
+    proxy: "localhost:8001",
+    startPath: "/components/titanium-icon-input-container/demo/index.html"
   });
 });
 

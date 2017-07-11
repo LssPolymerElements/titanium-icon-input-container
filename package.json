@@ -1,15 +1,22 @@
 {
   "name": "titanium-icon-input-container",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "titanium-icon-input-container.html",
   "dependencies": {},
   "devDependencies": {
+    "tslint": "^4.0.2",
     "browser-sync": "^2.18.2",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "typescript": "^2.4.1",
+    "bower": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm run build",
+    "postinstall": "bower install",
+    "lint": "tslint \"*.ts\"",
+    "build": "tsc",
+    "test": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",

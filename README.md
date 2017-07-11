@@ -21,5 +21,7 @@ A simple way to add an prefixed icon to an input that responds to disabled, focu
 ```
 -->
 ```html
-
+<titanium-icon-input-container icon="icons:alarm">
+    <paper-input></paper-input>
+</titanium-icon-input-container>
 ```
