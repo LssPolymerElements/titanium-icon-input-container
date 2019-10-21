@@ -5,10 +5,10 @@
   "main": "titanium-icon-input-container.html",
   "dependencies": {},
   "devDependencies": {
-    "tslint": "^4.0.2",
-    "browser-sync": "^2.18.2",
+    "tslint": "^5.20.0",
+    "browser-sync": "^2.26.7",
     "gulp": "^3.9.1",
-    "typescript": "^2.4.1",
+    "typescript": "^3.6.4",
     "bower": "*"
   },
   "scripts": {
